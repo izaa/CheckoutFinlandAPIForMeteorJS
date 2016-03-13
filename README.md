@@ -4,10 +4,12 @@ Checkout Finland's Payment API Client for MeteorJS. PHP version of the client is
 # Requirements
 
 Following packages are needed 
-meteor add jparker:crypto-md5
-meteor add http
-meteor add jparker:crypto-hmac
-meteor add jparker:crypto-sha256
+```
+$ meteor add jparker:crypto-md5
+$ meteor add http
+$ meteor add jparker:crypto-hmac
+$ meteor add jparker:crypto-sha256
+```
 
 The response content is an xml data, so if you want to parse that data somehow, you could use xml2js-package i.e.
 
@@ -15,8 +17,10 @@ The response content is an xml data, so if you want to parse that data somehow, 
 
 Following example uses xml2js to parse response data and MomentJS to handle date.
 
-meteor add peerlibrary:xml2js
-meteor add mrt:moment
+```
+$ meteor add peerlibrary:xml2js
+$ meteor add mrt:moment
+```
 
 Helper
 ```js
