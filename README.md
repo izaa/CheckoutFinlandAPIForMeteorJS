@@ -18,7 +18,7 @@ Following example uses xml2js to parse response data and MomentJS to handle date
 meteor add peerlibrary:xml2js
 meteor add mrt:moment
 
-* Helper
+Helper
 ```js
 Template.checkoutView.onCreated(function() {
     Meteor.call('getPaymentMethods', function(e, r) {
@@ -50,7 +50,7 @@ Template.checkoutView.onCreated(function() {
 });
 ```
 
-*Method
+Method
 ```js
 if (Meteor.isServer) {
     Meteor.methods({
