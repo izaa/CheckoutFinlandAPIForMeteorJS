@@ -1,28 +1,28 @@
 # CheckoutFinlandAPIForMeteorJS
 Checkout Finland's Payment API Client for MeteorJS
 
-#Requirements
+# Requirements
 
 Following packages are needed 
-jparker:crypto-md5
-http
-jparker:crypto-hmac
-jparker:crypto-sha256
+meteor add jparker:crypto-md5
+meteor add http
+meteor add jparker:crypto-hmac
+meteor add jparker:crypto-sha256
 
 The response content is an xml data, so if you want to parse that data somehow, you could use xml2js-package i.e.
 
-#Usage
+# Usage
 
 Following example uses xml2js to parse response data and MomentJS to handle date.
 
-peerlibrary:xml2js
-mrt:moment
+meteor add peerlibrary:xml2js
+meteor add mrt:moment
 
 Helper
-
+```js
 Template.checkoutView.onCreated(function() {
     Meteor.call('getPaymentMethods', function(e, r) {
-        if (!e) {
+    j        if (!e) {
             var pms = [];
             for (var bank in r) {
                 var obj = {};
@@ -47,9 +47,10 @@ Template.checkoutView.onCreated(function() {
     })
 
 });
-
+```
 
 Method
+```js
 if (Meteor.isServer) {
     Meteor.methods({
         getPaymentMethods: function() {
@@ -112,3 +113,4 @@ if (Meteor.isServer) {
         }
     });
 }
+```
