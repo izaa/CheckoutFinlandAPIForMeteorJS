@@ -1,5 +1,5 @@
 # CheckoutFinlandAPIForMeteorJS
-Checkout Finland's Payment API Client for MeteorJS
+Checkout Finland's Payment API Client for MeteorJS. PHP version of the client is available here https://github.com/rkioski/CheckoutAPIClient/ 
 
 # Requirements
 
