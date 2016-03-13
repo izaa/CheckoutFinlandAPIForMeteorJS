@@ -18,38 +18,39 @@ Following example uses xml2js to parse response data and MomentJS to handle date
 meteor add peerlibrary:xml2js
 meteor add mrt:moment
 
-Helper
+* Helper
 ```js
 Template.checkoutView.onCreated(function() {
     Meteor.call('getPaymentMethods', function(e, r) {
-    j        if (!e) {
-            var pms = [];
-            for (var bank in r) {
-                var obj = {};
-                for (var i in r[bank][0]) {
-                    if (i === '$') {
-                        obj.url = r[bank][0][i].url;
-                        obj.icon = r[bank][0][i].icon;
-                        obj.name = r[bank][0][i].name;
-                    } else {
-                        obj.fields = obj.fields ? obj.fields : [];
-                        obj.fields.push({field: i, value: r[bank][0][i][0]});
-                    }
+        if (e) {
+            console.log(e);
+            return false;
+        }
+        var pms = [];
+        for (var bank in r) {
+            var obj = {};
+            for (var i in r[bank][0]) {
+                if (i === '$') {
+                    obj.url = r[bank][0][i].url;
+                    obj.icon = r[bank][0][i].icon;
+                    obj.name = r[bank][0][i].name;
+                } else {
+                    obj.fields = obj.fields ? obj.fields : [];
+                    obj.fields.push({field: i, value: r[bank][0][i][0]});
                 }
-
-                pms.push(obj);
             }
 
-            Session.set('paymentMethods', pms);
-        } else {
-            console.log(e);
+            pms.push(obj);
         }
+
+        Session.set('paymentMethods', pms);
+    
     })
 
 });
 ```
 
-Method
+*Method
 ```js
 if (Meteor.isServer) {
     Meteor.methods({
