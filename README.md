@@ -11,11 +11,11 @@ $ meteor add jparker:crypto-hmac
 $ meteor add jparker:crypto-sha256
 ```
 
-The response content is an xml data, so if you want to parse that data somehow, you could use xml2js-package i.e.
+The response content is an xml data, so if you want to parse that data somehow, you could use for example a xml2js-package found here https://atmospherejs.com/peerlibrary/xml2js
 
 # Usage
 
-Following example uses xml2js to parse response data and MomentJS to handle date.
+Following example uses xml2js to parse the response data which is an xml and MomentJS to handle dates.
 
 ```
 $ meteor add peerlibrary:xml2js
