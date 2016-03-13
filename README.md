@@ -72,7 +72,7 @@ if (Meteor.isServer) {
                 amount: totalAmount, // price in cents
                 delivery_date: moment(new Date()).format('YYYYMMDD'),
                 firstname: 'optional firstname',
-                familyname: 'optional lastname,
+                familyname: 'optional lastname',
                 address: 'optional address',
                 postcode: 'optional postcode',
                 postoffice: 'optinal postoffice',
